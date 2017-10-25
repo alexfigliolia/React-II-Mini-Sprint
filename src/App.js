@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import { people } from './people';
 import PeopleList from './peopleList/PeopleList';
-import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       people: people
     }
-  }
-
-  componentDidMount() {
-    
   }
 
   render() {
@@ -22,7 +17,7 @@ class App extends Component {
         <h1>
           {
             'People'.split('').map((letter, i) => {
-              return <div>{letter}</div>
+              return <div key={i}>{letter}</div>
             })
           }
         </h1>
@@ -32,5 +27,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
